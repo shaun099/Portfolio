@@ -10,15 +10,24 @@ export default function Navbar() {
 
       <ul className="hidden lg:flex items-center gap-12 font-semibold text-base">
         <li className="p-3 hover:text-red-600 transition-all">
-          <a href="#Home">Home</a>
+          <a href="#Home" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            Home
+          </a>
         </li>
         <li className="p-3 hover:text-red-600 transition-all">
-          <a href="#About">About Me</a>
+          <a href="#About" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            About Me
+          </a>
         </li>
         <li className="p-3 hover:text-red-600 transition-all">
-          <a href="#Projects">Projects</a>
+          <a href="#Projects" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            Projects
+          </a>
         </li>
-        <li className="p-3 hover:text-red-600 transition-all">
+        <li
+          className="p-3 hover:text-red-600 transition-all"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           <a href="#Contact">Contact Me</a>
         </li>
       </ul>
@@ -39,16 +48,28 @@ export default function Navbar() {
         className={`absolute lg:hidden top-20 left-0 w-full bg-black flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "hidden"}`}
         style={{ transition: "transform 0.3s ease,opacity 0.3s ease" }}
       >
-        <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
+        <li
+          className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <a href="#Home">Home</a>
         </li>
-        <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
+        <li
+          className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <a href="#About">About Me</a>
         </li>
-        <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
+        <li
+          className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <a href="#Projects">Projects</a>
         </li>
-        <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
+        <li
+          className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <a href="#Contact">Contact Me</a>
         </li>
       </div>

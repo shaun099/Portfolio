@@ -9,10 +9,18 @@ export default function Navbar() {
       <div className="text-2xl font-bold">SMR</div>
 
       <ul className="hidden lg:flex items-center gap-12 font-semibold text-base">
-        <li className="p-3 hover:text-red-600 transition-all">Home</li>
-        <li className="p-3 hover:text-red-600 transition-all">About Me</li>
-        <li className="p-3 hover:text-red-600 transition-all">Projects</li>
-        <li className="p-3 hover:text-red-600 transition-all">Contact Me</li>
+        <li className="p-3 hover:text-red-600 transition-all">
+          <a href="#Home">Home</a>
+        </li>
+        <li className="p-3 hover:text-red-600 transition-all">
+          <a href="#About">About Me</a>
+        </li>
+        <li className="p-3 hover:text-red-600 transition-all">
+          <a href="#Projects">Projects</a>
+        </li>
+        <li className="p-3 hover:text-red-600 transition-all">
+          <a href="#Contact">Contact Me</a>
+        </li>
       </ul>
 
       {!isMenuOpen ? (
@@ -32,16 +40,16 @@ export default function Navbar() {
         style={{ transition: "transform 0.3s ease,opacity 0.3s ease" }}
       >
         <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
-          Home
+          <a href="#Home">Home</a>
         </li>
         <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
-          About Me
+          <a href="#About">About Me</a>
         </li>
         <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
-          Projects
+          <a href="#Projects">Projects</a>
         </li>
         <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">
-          Contact Me
+          <a href="#Contact">Contact Me</a>
         </li>
       </div>
     </nav>

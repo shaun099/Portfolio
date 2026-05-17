@@ -2,7 +2,7 @@ import Navbar from "./navbar";
 import Image from "next/image";
 export default function Hero() {
   return (
-    <section className="min-h-screen w-full bg-black text-white">
+    <section id="Home" className="min-h-screen w-full bg-black text-white">
       <div className="w-full h-full">
         <Navbar />
       </div>
@@ -13,13 +13,13 @@ export default function Hero() {
           </h1>
           <h2 className="text-lg md:text-xl">Full Stack Developer</h2>
           <p className="max-w-lg mt-4 text-md text-white text-justify">
-            Aspernatur ut assumenda impedit saepe, voluptatibus alias
-            repudiandae. Blanditiis aperiam, cupiditate excepturi corrupti
-            provident molestiae et cumque quis optio enim beatae repellat nisi
-            laboriosam quibusdam qui saepe nesciunt dolores vero. Blanditiis
-            aperiam, cupiditate excepturi corrupti provident molestiae et cumque
-            quis optio enim beatae repellat nisi laboriosam quibusdam qui saepe
-            nesciunt dolores vero.
+            Computer Science Engineer and Full Stack Developer passionate about
+            building modern, scalable, and user-focused digital experiences.
+            Skilled in developing responsive frontend interfaces, backend
+            systems, and seamless web applications using technologies like
+            React, Next.js, and modern development tools. Focused on creating
+            clean, efficient, and impactful solutions that combine functionality
+            with strong design.
           </p>
         </div>
         <div className="w-full sm:w-2/4 md:w-1/2 lg:w-1/3 h-full flex items-center justify-center relative transition-transform duration-300 hover:scale-105">

@@ -28,7 +28,7 @@ export default function Navbar() {
       )}
 
       <div
-        className={`absolute lg:hidden top-24 left-0 w-full bg-transparent flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "hidden"}`}
+        className={`absolute lg:hidden top-20 left-0 w-full bg-black flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "hidden"}`}
         style={{ transition: "transform 0.3s ease,opacity 0.3s ease" }}
       >
         <li className="list-none w-full text-center p-4 hover:text-red-500 transition-all cursor-pointer">

@@ -22,7 +22,7 @@ export default function Hero() {
             with strong design.
           </p>
         </div>
-        <div className="w-full sm:w-2/4 md:w-1/2 lg:w-1/3 h-full flex items-center justify-center relative transition-transform duration-300 hover:scale-105">
+        <div className="w-[70%] sm:w-2/5 md:w-1/2 lg:w-1/3 h-full flex items-center justify-center relative transition-transform duration-300 hover:scale-105">
           <Image
             src="/profile.webp"
             alt="hero"

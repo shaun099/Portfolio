@@ -1,9 +1,12 @@
+
+
 const experience = [
   { role: "Full Stack Developer Intern", company: "Upsmart Solutions" },
   { role: "Full Stack Developer(Freelance)", company: "Precision Quality" },
   { role: "Full Stack Developer(Freelance)", company: "Alturio Group" },
   { role: "IPR & Research Lead", company: "IEDC SJCET" },
 ];
+
 
 export default function About() {
   return (

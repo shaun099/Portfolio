@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { PROJECTS } from "@/constants/projects";
 import type { Project } from "@/types/projects";
@@ -214,6 +214,18 @@ function ProjectModal({
 
 export default function ProjectsPage() {
   const [selected, setSelected] = useState<Project | null>(null);
+
+  useEffect(() => {
+    if (selected) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selected]);
 
   return (
     <>

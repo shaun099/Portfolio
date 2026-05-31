@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <nav className=" text-white flex items-center justify-between px-8 py-6 md:px-32">
-      <div className="text-2xl font-bold">SMR</div>
+      <Image src="/logo.png" alt="Logo" width={90} height={40} />
 
       <ul className="hidden lg:flex items-center gap-12 font-semibold text-base">
         <li className="p-3 hover:text-red-600 transition-all">

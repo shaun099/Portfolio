@@ -19,7 +19,7 @@ export default function About() {
       </div>
       <div>
         <div className="text-lg leading-8 font-extralight md:max-w-5xl mx-auto">
-         Hi...I&apos;m Shaun MR, a passionate full stack developer based in India, who loves building modern, scalable, and user-focused web applications. I enjoy transforming ideas into clean digital experiences through intuitive design, efficient backend systems, and responsive frontend development.
+         I&apos;m Shaun MR, a passionate full stack developer based in India, who loves building modern, scalable, and user-focused web applications. I enjoy transforming ideas into clean digital experiences through intuitive design, efficient backend systems, and responsive frontend development.
         </div>
         <div className="text-lg leading-8 font-extralight mt-4 flex flex-col md:flex-row md:gap-1 md:justify-center max-w-5xl gap-4 mx-auto pt-7">
           <div className="flex flex-col gap-4 md:w-5/12 ">

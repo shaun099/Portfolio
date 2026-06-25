@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <section
       id="Contact"
-      className="min-h-screen w-full bg-black text-white px-5 py-8"
+      className="min-h-screen w-full scroll-mt-20 bg-black text-white px-5 py-8"
     >
       <div className="flex flex-col gap-4 items-center justify-center">
         <h2 className="text-5xl font-bold text-red-500">Get in touch</h2>

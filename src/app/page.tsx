@@ -8,6 +8,7 @@ import Hero from "../components/hero";
 import About from "../components/about";
 import Projects from "../components/projects";
 import Contact from "../components/contact";
+import Navbar from "../components/nav";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -23,8 +24,8 @@ export default function Home() {
   return (
     <>
       <Loader visible={loading} />
-
-      <main className="min-h-screen w-full bg-black text-black">
+      <Navbar />
+      <main className="min-h-screen w-full bg-black pt-24">
         <Hero />
         <About />
         <Projects />

@@ -37,6 +37,7 @@ export default function Loader({ visible }: LoaderProps) {
             S at x=0, M at x=425, R at x=817
             Responsive: scales to fit viewport via viewBox + width="100%"
           */}
+          
           <div className="w-full max-w-[600px] px-8 sm:px-12 md:px-16">
             <svg
               viewBox="0 0 1180 388"

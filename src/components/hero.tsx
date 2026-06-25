@@ -1,10 +1,10 @@
-import Navbar from "./navbar";
+import Navbar from "./nav";
 import Image from "next/image";
 export default function Hero() {
   return (
-    <section id="Home" className="min-h-screen w-full bg-black text-white">
+    <section id="Home" className="min-h-screen w-full scroll-mt-20 bg-black text-white">
       <div className="w-full h-full">
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
       <div className="w-full h-full flex flex-col lg:flex-row gap-10 md:gap-15 items-center justify-between md:justify-around px-8 py-6 md:px-32 ">
         <div className="flex flex-col">

@@ -8,6 +8,9 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -19,11 +22,35 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
-    setFormData({ name: "", email: "", message: "" });
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json()) as {
+        error?: string;
+        message?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(
+          result.error ?? "Something went wrong while sending your message.",
+        );
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -88,9 +115,22 @@ export default function Contact() {
 
         <button
           type="submit"
-          className="w-full px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition duration-200"
+          disabled={status === "sending"}
+          className={`w-full px-6 py-3 text-white font-semibold rounded-lg transition duration-200 ${
+            status === "success"
+              ? "bg-emerald-500 hover:bg-emerald-600"
+              : status === "error"
+                ? "bg-red-500 hover:bg-red-600"
+                : "bg-red-500 hover:bg-red-600"
+          }`}
         >
-          Send Message
+          {status === "sending"
+            ? "Sending..."
+            : status === "success"
+              ? "Message sent"
+              : status === "error"
+                ? "Try again"
+                : "Send Message"}
         </button>
       </form>
       <div className="flex gap-6 justify-center mt-8">

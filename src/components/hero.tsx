@@ -1,8 +1,10 @@
 import Navbar from "./nav";
+import GlassBox from "./GlassBox";
 import Image from "next/image";
 export default function Hero() {
   return (
     <section id="Home" className="min-h-screen w-full scroll-mt-20 bg-black text-white">
+      <GlassBox />
       <div className="w-full h-full">
         {/* <Navbar /> */}
       </div>

@@ -1,11 +1,13 @@
 import Navbar from "./nav";
 import Image from "next/image";
+import ChipList from "./ui/chipList";
 export default function Hero() {
   return (
-    <section id="Home" className="min-h-screen w-full scroll-mt-20 bg-black text-white">
-      <div className="w-full h-full">
-        {/* <Navbar /> */}
-      </div>
+    <section
+      id="Home"
+      className="min-h-screen w-full scroll-mt-20 bg-black text-white"
+    >
+      <div className="w-full h-full">{/* <Navbar /> */}</div>
       <div className="w-full h-full flex flex-col lg:flex-row gap-10 md:gap-15 items-center justify-between md:justify-around px-8 py-6 md:px-32 ">
         <div className="flex flex-col">
           <h1 className="text-4xl md:text-4xl lg:text-6xl max-w-4xl text-red-500 font-bold">
@@ -21,7 +23,11 @@ export default function Hero() {
             clean, efficient, and impactful solutions that combine functionality
             with strong design.
           </p>
+          <div className="flex max-w-lg flex-wrap  mt-4">
+            <ChipList items={["React Js","Next Js","Mobile App Development","Fast Api","Node Js"]}/>
+          </div>
         </div>
+
         <div className="w-[70%] sm:w-2/5 md:w-1/2 lg:w-1/3 h-full flex items-center justify-center relative transition-transform duration-300 hover:scale-105">
           <Image
             src="/profile.webp"

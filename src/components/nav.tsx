@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
-    <nav className=" text-white top-6 md:top-3 flex items-center justify-between py-1 px-6 lg:justify-around fixed left-1/2 translate-x-[-50%] bg-black/50 backdrop-blur-3xl z-50 rounded-full w-[94%] max-w-4xl shadow-lg" >
+    <nav className=" text-white top-6 md:top-3 flex items-center justify-between py-1 px-6 lg:justify-around fixed left-1/2 translate-x-[-50%] bg-black/50 backdrop-blur-3xl z-50 rounded-full w-[94%] max-w-4xl shadow-lg md:hidden" >
       <Image src="/logo.png" alt="Logo" width={90} height={40} />
 
       <ul className="hidden md:flex items-center gap-12  font-semibold text-base">

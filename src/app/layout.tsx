@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import FloatingDockDemo from "@/components/floating-dock-demo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full w-full antialiased`}
     >
-      <body className="w-full min-h-full flex flex-col">{children}</body>
+      <body className="w-full min-h-full flex flex-col">
+        {children}
+        <FloatingDockDemo />
+      </body>
     </html>
   );
 }

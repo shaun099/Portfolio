@@ -5,10 +5,9 @@ export default function Hero() {
   return (
     <section
       id="Home"
-      className="min-h-screen w-full scroll-mt-20 bg-black text-white"
+      className="min-h-screen w-full scroll-mt-20 bg-black text-white flex items-center"
     >
-      <div className="w-full h-full">{/* <Navbar /> */}</div>
-      <div className="w-full h-full flex flex-col lg:flex-row gap-10 md:gap-15 items-center justify-between md:justify-around px-8 py-6 md:px-32 ">
+      <div className="w-full h-full flex flex-col lg:flex-row gap-10 md:gap-15 items-center justify-between md:justify-around px-8 py-6 md:px-32  ">
         <div className="flex flex-col">
           <h1 className="text-4xl md:text-4xl lg:text-6xl max-w-4xl text-red-500 font-bold">
             SHAUN MR

@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <Loader visible={loading} />
       <Navbar />
-      <main className="min-h-screen w-full bg-black pt-24">
+      <main className="min-h-screen w-full pt-18 md:pt-0 bg-black">
         <Hero />
         <About />
         <Projects />

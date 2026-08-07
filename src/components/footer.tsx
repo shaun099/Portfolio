@@ -12,7 +12,7 @@ export default function Footer() {
               alt="Logo"
               width={1000}
               height={1000}
-              className="w-14 md:w-44"
+              className="w-40 md:w-44"
             />
           </div>
 

@@ -9,6 +9,7 @@ import About from "../components/about";
 import Projects from "../components/projects";
 import Contact from "../components/contact";
 import Navbar from "../components/nav";
+import Footer from "../components/footer";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -31,6 +32,7 @@ export default function Home() {
         <Projects />
         <Contact />
       </main>
+      <Footer />
     </>
   );
 }

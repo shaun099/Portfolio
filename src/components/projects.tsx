@@ -229,14 +229,14 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <main id="Projects" className="min-h-screen scroll-mt-20 bg-black flex flex-col">
+      <main
+        id="Projects"
+        className="min-h-screen scroll-mt-20 bg-black flex flex-col"
+      >
         <section className="flex-1 px-4 sm:px-8 md:px-12 lg:px-20 py-14 sm:py-16 md:py-20">
           <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10">
-            <div className="flex flex-col gap-2.5">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] text-white/30">
-                Things I&apos;ve{" "}
-                <em className="not-italic text-red-500">built</em>
-              </h1>
+            <div className="flex flex-col gap-4 items-center justify-center">
+              <h1 className="text-5xl font-bold text-red-500">Projects</h1>
             </div>
 
             <div className="h-px bg-red-500/10" />

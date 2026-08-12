@@ -6,7 +6,7 @@ import Loader from "@/components/loader";
 
 import Hero from "../components/hero";
 import About from "../components/about";
-import Projects from "../components/projects";
+import Projects from "../components/p";
 import Contact from "../components/contact";
 import Navbar from "../components/nav";
 import Footer from "../components/footer";

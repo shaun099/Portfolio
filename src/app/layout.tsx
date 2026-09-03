@@ -27,7 +27,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full w-full antialiased`}
     >
-      <body className="w-full min-h-full flex flex-col">{children}</body>
+      <body className="w-full min-h-full flex flex-col">{children}
+        <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e56a32dc504d4d21a11ed386ef2e5910"}'></script>
+      </body>
     </html>
   );
 }

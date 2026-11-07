@@ -1,14 +1,15 @@
 import Navbar from "./nav";
 import Image from "next/image";
 import ChipList from "./ui/chipList";
+import Hero_bg from "./hero_bg";
 export default function Hero() {
   return (
     <section
       id="Home"
-      className="min-h-screen w-full scroll-mt-20 bg-black text-white"
+      className="relative min-h-screen w-full scroll-mt-20 overflow-hidden bg-black text-white"
     >
-      <div className="w-full h-full">{/* <Navbar /> */}</div>
-      <div className="w-full h-full flex flex-col lg:flex-row gap-10 md:gap-15 items-center justify-between md:justify-around px-8 py-6 md:px-32 ">
+      <Hero_bg />
+      <div className="relative z-10 flex w-full h-full flex-col lg:flex-row gap-10 md:gap-15 items-center justify-between md:justify-around px-8 py-6 md:px-32 ">
         <div className="flex flex-col">
           <h1 className="text-4xl md:text-4xl lg:text-6xl max-w-4xl text-red-500 font-bold">
             SHAUN MR

@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { PROJECTS } from "@/constants/projects";
 import type { Project } from "@/types/projects";
+import { mapApiProjectToProject } from "@/types/projects";
 
-function cornerClasses(variant: "tl-br" | "tr-bl"): string {
+function cornerClasses(variant: "tl-br" | "tr-bl" = "tl-br"): string {
   const all = "rounded-[20px]";
   if (variant === "tl-br") {
     return `${all} sm:rounded-tl-[20px] sm:rounded-br-[20px] sm:rounded-tr-[0px] sm:rounded-bl-[0px]`;
@@ -213,7 +214,35 @@ function ProjectModal({
 }
 
 export default function ProjectsPage() {
+  const [projects, setProjects] = useState<Project[]>(PROJECTS);
   const [selected, setSelected] = useState<Project | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function fetchProjects() {
+      try {
+        const response = await fetch("/api/v1/projects");
+        if (!response.ok) {
+          throw new Error(`Failed to fetch projects: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data?.success && Array.isArray(data?.data) && data.data.length > 0) {
+          if (isMounted) {
+            setProjects(data.data.map(mapApiProjectToProject));
+          }
+        }
+      } catch (error) {
+        console.warn("Could not fetch projects from API, falling back to backup projects:", error);
+      }
+    }
+
+    fetchProjects();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   useEffect(() => {
     if (selected) {
@@ -242,7 +271,7 @@ export default function ProjectsPage() {
             <div className="h-px bg-red-500/10" />
 
             <div className="grid grid-cols-12 gap-3 md:gap-4">
-              {PROJECTS.map((project) => (
+              {projects.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}

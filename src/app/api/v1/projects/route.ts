@@ -5,9 +5,33 @@ import { createProjectSchema } from "@/modules/projects/project.schema";
 import { verifyAdmin } from "@/lib/auth/verify-admin";
 
 // GET /api/v1/projects
-// Retrieve all published projects
-export async function GET() {
+// Retrieve published projects (or all projects including drafts for authenticated admin)
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const includeAll = searchParams.get("all") === "true";
+
+    if (includeAll) {
+      const auth = await verifyAdmin();
+
+      if (!auth.authorized) {
+        return NextResponse.json(
+          {
+            success: false,
+            message: auth.message,
+          },
+          { status: auth.status }
+        );
+      }
+
+      const allProjects = await projectService.getAllProjects();
+
+      return NextResponse.json({
+        success: true,
+        data: allProjects,
+      });
+    }
+
     const projects = await projectService.getPublishedProjects();
 
     return NextResponse.json({

@@ -1,12 +1,46 @@
 "use client";
 
-import { useState } from "react";
-import { PROJECTS } from "@/constants/projects";
+import { useEffect, useState } from "react";
+// import { PROJECTS } from "@/constants/projects";
 import type { Project } from "@/types/projects";
+import { mapApiProjectToProject } from "@/types/projects";
 import RetroCard from "@/components/mvpblocks/retro-card";
 
 export default function Projects() {
-  const [selected, setSelected] = useState<Project | null>(null);
+  // Backup disabled for testing the API:
+  // const [projects, setProjects] = useState<Project[]>(PROJECTS);
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function fetchProjects() {
+      try {
+        const response = await fetch("/api/v1/projects");
+        if (!response.ok) {
+          throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        if (data?.success && Array.isArray(data?.data)) {
+          if (isMounted) {
+            setProjects(data.data.map(mapApiProjectToProject));
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch projects from API:", error);
+        // Backup disabled for testing:
+        // setProjects(PROJECTS);
+      }
+    }
+
+    fetchProjects();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <main
@@ -22,10 +56,10 @@ export default function Projects() {
           <div className="h-px bg-red-500/10" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch gap-10">
-  {PROJECTS.map((project) => (
-    <RetroCard key={project.id} project={project} />
-  ))}
-</div>
+            {projects.map((project) => (
+              <RetroCard key={project.id} project={project} />
+            ))}
+          </div>
         </div>
       </section>
     </main>
